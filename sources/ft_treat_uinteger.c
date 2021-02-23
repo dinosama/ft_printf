@@ -29,9 +29,9 @@ int	ft_treat_uinteger(t_flags *flags, unsigned int n)
 	}
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
+	ft_count_putstr("0", zero);
 	if (n != 0 || flags->dot != 0)
-		ft_count_putstr("0", zero);
-	ft_putlongnbr((long long)n);
+		ft_putlongnbr((long long)n);
 	if (flags->minus == 1)
 		ft_treat_width(*flags, len);
 	if (n == 0 && flags->dot == 0 && flags->width < 1)
