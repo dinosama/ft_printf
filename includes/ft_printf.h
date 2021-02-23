@@ -48,7 +48,7 @@ int			ft_treat_pointeur(t_flags *flags, unsigned long long p);
 int			ft_treat_integer(t_flags *flags, int n);
 int			ft_treat_uinteger(t_flags *flags, unsigned int n);
 int			ft_treat_hexa(t_flags *flags, int n, char *hexa);
-int			ft_treat_pourcent(t_flags flags);
+int			ft_treat_pourcent(t_flags *flags);
 int			ft_treatment(t_flags *flags, va_list *my_list);
 t_flags			ft_init_flags(void);
 int			ft_print(va_list *my_list, const char *save, int final_length);
