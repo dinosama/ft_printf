@@ -34,9 +34,11 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 {
 	if (negat == 1)
 		len++;
+	if (negat == 1 && flags->zero == 1 && flags->dot == -1 && flags->minus == 0)
+		ft_putchar('-');
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
-	if (negat == 1)
+	if (negat == 1 && flags->zero == 0)
 		ft_putchar('-');
 	ft_count_putstr("0", zero);
 	if (n != 0 || flags->dot != 0)
