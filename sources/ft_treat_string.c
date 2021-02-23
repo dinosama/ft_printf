@@ -16,6 +16,8 @@ int	ft_treat_string(t_flags flags, char  *str)
 {
 	int	len;
 
+	if (str == NULL)
+		return (0);
 	len = ft_strlen(str);
 	if (flags.dot < len && flags.dot != -1)
 		len = flags.dot;
