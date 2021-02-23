@@ -38,8 +38,6 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 		ft_putchar('-');
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
-	if (flags->dot == 0 && n == 0 && flags->width > 1)
-		ft_putchar(' ');
 	if (negat == 1 && flags->zero == 0)
 		ft_putchar('-');
 	ft_count_putstr("0", zero);
