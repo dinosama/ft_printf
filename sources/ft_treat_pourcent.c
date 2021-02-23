@@ -51,9 +51,9 @@ int	ft_treat_pourcent(t_flags *flags)
 	else
 		final_length = 1;
 	if (flags->minus == 0)
-		ft_treat_width(flags, 1);
+		ft_treat_width(*flags, 1);
 	ft_count_putstr("%", 1);
 	if (flags->minus == 1)
-		ft_treat_width(flags, 1);
+		ft_treat_width(*flags, 1);
 	return (final_length);
 }
