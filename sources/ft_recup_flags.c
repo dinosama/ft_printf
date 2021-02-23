@@ -60,8 +60,8 @@ int	ft_recup_flags(const char *save, t_flags *flags, int i, va_list *my_list)
 	stock = i;
 	while (save[i])
 	{
-		if (save[i] == '0' && flags->width == -1 && flags->minus == 0)
-			flags->zero = 1;
+		if (save[i] == '0' && flags->width == -1)
+			ft_flags_zero(flags);
 		else if (save[i] == '-' && flags->width == -1)
 			ft_flags_minus(flags);
 		else if (ft_isdigit(save[i]) && flags->star == 0 && flags->width == -1)
