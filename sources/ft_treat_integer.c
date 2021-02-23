@@ -41,6 +41,8 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 	ft_count_putstr("0", zero);
 	if (n != 0 || flags->dot != 0)
 		ft_putlongnbr((long long)n);
+	else
+		len = 0;
 	if (flags->minus == 1)
 		ft_treat_width(*flags, len);
 	return (len);
