@@ -19,8 +19,6 @@ int	ft_treat_uinteger(t_flags *flags, unsigned int n)
 
 	zero = 0;
 	n = n % 4294967296;
-	if (n == 0 && flags->dot == 0)
-		return (0);
 	len = countnumbers((unsigned long long)n, 10);
 	if (flags->dot != -1)
 		flags->zero = 0;
@@ -31,10 +29,13 @@ int	ft_treat_uinteger(t_flags *flags, unsigned int n)
 	}
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
-	ft_count_putstr("0", zero);
+	if (n != 0 || flags->dot != 0)
+		ft_count_putstr("0", zero);
 	ft_putlongnbr((long long)n);
 	if (flags->minus == 1)
 		ft_treat_width(*flags, len);
+	if (n == 0 && flags->dot == 0 && flags->width < 1)
+		return (0);
 	if (flags->width > len)
 		return (len + (flags->width - len));
 	return (len);
