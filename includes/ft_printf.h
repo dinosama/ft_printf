@@ -56,5 +56,6 @@ int			ft_printf(const char *src, ...);
 void			ft_putchar(char c);
 void			ft_putstr(char *str);
 char			*ft_strdup(const char *str);
+void			ft_flags_zero(t_flags *flags);
 
 #endif

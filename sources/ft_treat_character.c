@@ -12,6 +12,14 @@
 
 #include "../includes/ft_printf.h"
 
+void	ft_flags_zero(t_flags *flags)
+{
+	if (flags->minus = 1)
+		flags->zero = 0;
+	else
+		flags->zero = 1;
+}
+
 int	ft_treat_character(t_flags flags, va_list *my_list)
 {
 	char	c;
