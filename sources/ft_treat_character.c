@@ -14,7 +14,7 @@
 
 void	ft_flags_zero(t_flags *flags)
 {
-	if (flags->minus = 1)
+	if (flags->minus == 1)
 		flags->zero = 0;
 	else
 		flags->zero = 1;
