@@ -31,6 +31,8 @@ int	countnumbers(long long n, int base)
 {
 	int	i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
 	if (n < 0)
 		i++;
