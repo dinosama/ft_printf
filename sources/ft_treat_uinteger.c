@@ -19,6 +19,8 @@ int	ft_treat_uinteger(t_flags *flags, unsigned int n)
 
 	zero = 0;
 	n = n % 4294967296;
+	if (n == 0 && flags.dot == 0)
+		return (0);
 	len = countnumbers((unsigned long long)n, 10);
 	if (flags->dot != -1)
 		flags->zero = 0;
