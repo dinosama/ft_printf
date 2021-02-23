@@ -42,6 +42,8 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 		len++;
 	if (flags->minus == 1)
 		ft_treat_width(*flags, len);
+	if (n = 0)
+		len++;
 	return (len);
 }
 
