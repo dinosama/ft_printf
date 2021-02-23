@@ -46,7 +46,7 @@ int	ft_treatment(t_flags *flags, va_list *my_list)
 	else if (flags->type == 'X')
 		return (ft_treat_hexa(flags, va_arg(*my_list, int), "0123456789ABCDEF"));
 	else if (flags->type == '%')
-		return (ft_treat_pourcent());
+		return (ft_treat_pourcent(flags));
 	ft_putchar('%');
 	return (0);
 }

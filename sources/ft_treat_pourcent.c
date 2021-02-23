@@ -42,7 +42,8 @@ int	countnumbers(long long n, int base)
 	return (i);
 }
 
-int	ft_treat_pourcent(void)
+int	ft_treat_pourcent(t_flags *flags)
 {
-	return (ft_count_putstr("%", 1));
+	ft_count_putstr("%", 1);
+	return (flags->width);
 }
