@@ -58,24 +58,24 @@ int	ft_recup_flags(const char *save, t_flags *flags, int i, va_list *my_list)
 	int	stock;
 
 	stock = i;
-	while (save[i++])
+	while (save[i])
 	{
 		if (save[i] == '0' && flags->width == -1 && flags->minus == 0)
 			flags->zero = 1;
 		else if (save[i] == '-' && flags->width == -1)
 			ft_flags_minus(flags);
 		else if (ft_isdigit(save[i]) && flags->star == 0 && flags->width == -1)
-			i = (i - 2) + ft_flags_digit(&save[i], flags);
+			i = (i - 1) + ft_flags_digit(&save[i], flags);
 		else if (save[i] == '.')
 			i = ft_flags_point(save, flags, i, my_list);
 		else if (save[i] == '*' && flags->width == 0)
 			ft_flags_star(my_list, flags);
-		else if (ft_check_valid_caract(save[i]))
+		else if (ft_check_valid_caract(save[i]) && stock != i)
 		{
 			flags->type = save[i];
 			return (i);
 		}
-		else
+		else if (stock != i)
 			return (stock);
 		i++;
 	}
