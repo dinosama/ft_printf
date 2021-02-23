@@ -32,14 +32,14 @@ void	ft_putlongnbr(long long nb)
 
 int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 {
+	if (negat == 1)
+		len++;
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
 	if (negat == 1)
 		ft_putchar('-');
 	ft_count_putstr("0", zero);
 	ft_putlongnbr((long long)n);
-	if (negat == 1)
-		len++;
 	if (flags->minus == 1)
 		ft_treat_width(*flags, len);
 	if (n == 0)
