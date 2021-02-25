@@ -30,13 +30,12 @@ void	ft_putlongnbr(long long nb)
 	}
 }
 
-int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
+int		ft_treat_integer_two(t_flags *flags, int n, int zero, int len)
 {
-	if (n == 0 && flags->dot == 0)
-		len--;
-	if (negat == 1)
+	if (flags->nbnegat == 1)
 		len++;
-	if (negat == 1 && flags->zero == 1 && flags->dot == -1 && flags->minus == 0)
+	if (flags->nbnegat == 1 && flags->zero == 1 && flags->dot == -1 \
+	&& flags->minus == 0)
 	{
 		if (n != -2147483648)
 			ft_putchar('-');
@@ -45,7 +44,7 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 	}
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
-	if (negat == 1 && flags->zero == 0 && n != -2147483648)
+	if (flags->nbnegat == 1 && flags->zero == 0 && n != -2147483648)
 		ft_putchar('-');
 	else if (n == -2147483648)
 		len--;
@@ -59,19 +58,17 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 	return (len);
 }
 
-int	ft_treat_integer(t_flags *flags, int n)
+int		ft_treat_integer(t_flags *flags, int n)
 {
 	int	len;
 	int	zero;
-	int	negat;
 
-	negat = 0;
 	len = 0;
 	zero = 0;
 	if (n < 0)
 	{
 		n = -n;
-		negat = 1;
+		flags->nbnegat = 1;
 	}
 	len += countnumbers(n, 10);
 	if (flags->dot > -1)
@@ -81,7 +78,9 @@ int	ft_treat_integer(t_flags *flags, int n)
 		zero = flags->dot - len;
 		len = flags->dot;
 	}
-	len = ft_treat_integer_two(flags, n, zero, len, negat);
+	if (n == 0 && flags->dot == 0)
+		len--;
+	len = ft_treat_integer_two(flags, n, zero, len);
 	if (flags->width > len)
 		return (len + (flags->width - len));
 	return (len);

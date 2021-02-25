@@ -30,7 +30,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_count_putstr(char *str, int n)
+int		ft_count_putstr(char *str, int n)
 {
 	int	final_lenght;
 

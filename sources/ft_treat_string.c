@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_treat_string(t_flags flags, char  *str)
+int	ft_treat_string(t_flags flags, char *str)
 {
 	int	len;
 

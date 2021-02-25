@@ -15,7 +15,7 @@
 char	*ft_itoa_base(unsigned long long n, char *base)
 {
 	char	*str;
-	int	size;
+	int		size;
 
 	if (n == 0)
 		return (ft_strdup("0"));
@@ -54,9 +54,9 @@ int		ft_treat_hexa_two(t_flags *flags, char *str, int len, int zero)
 int		ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
 {
 	char	*str;
-	int	final_lenght;
-	int	len;
-	int	zero;
+	int		final_lenght;
+	int		len;
+	int		zero;
 
 	n = (unsigned int)(4294967295 + 1 + n);
 	zero = 0;

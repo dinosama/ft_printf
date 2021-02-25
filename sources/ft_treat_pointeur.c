@@ -31,9 +31,9 @@ int	ft_treat_pointeur_two(t_flags *flags, char *str, int zero, int len)
 int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
 {
 	char	*str;
-	int	final_lenght;
-	int	len;
-	int	zero;
+	int		final_lenght;
+	int		len;
+	int		zero;
 
 	zero = 0;
 	str = ft_itoa_base(p, "0123456789abcdef");

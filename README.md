@@ -1,2 +1,0 @@
-# printf
-# ft_printf

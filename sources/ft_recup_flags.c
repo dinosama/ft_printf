@@ -19,13 +19,14 @@ void	ft_flags_minus(t_flags *flags)
 	flags->minus = 1;
 }
 
-int	ft_flags_digit(const char *save, t_flags *flags)
+int		ft_flags_digit(const char *save, t_flags *flags)
 {
 	flags->width = ft_atoi((char*)save);
 	return (countnumbers(flags->width, 10));
 }
 
-int	ft_flags_point(const char *save, t_flags *flags, int i, va_list *my_list)
+int		ft_flags_point(const char *save, t_flags *flags,
+		int i, va_list *my_list)
 {
 	i++;
 	if (save[i] == '*')
@@ -57,7 +58,8 @@ void	ft_flags_star(va_list *my_list, t_flags *flags)
 	}
 }
 
-int	ft_recup_flags(const char *save, t_flags *flags, int i, va_list *my_list)
+int		ft_recup_flags(const char *save, t_flags *flags,
+		int i, va_list *my_list)
 {
 	int	stock;
 

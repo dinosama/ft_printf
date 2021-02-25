@@ -20,10 +20,10 @@ void	ft_flags_zero(t_flags *flags)
 		flags->zero = 1;
 }
 
-int	ft_treat_character(t_flags flags, va_list *my_list)
+int		ft_treat_character(t_flags flags, va_list *my_list)
 {
 	char	c;
-	int	final_length;
+	int		final_length;
 
 	if (flags.width > 1)
 		final_length = flags.width;
