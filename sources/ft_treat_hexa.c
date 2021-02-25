@@ -32,7 +32,21 @@ char	*ft_itoa_base(unsigned long long n, char *base)
 	return (str);
 }
 
-int	ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
+int		ft_treat_hexa_two(t_flags *flags, unsigned int n, int len, int zero)
+{
+	int		final_lenght;
+
+	final_lenght = 0;
+	if (flags->minus == 0)
+		ft_treat_width(*flags, (len));
+	final_lenght += ft_count_putstr("0", zero);
+	final_lenght += ft_count_putstr(str, 1);
+	if (flags->minus == 1)
+		ft_treat_width(*flags, (len));
+	return (final_lenght);
+}
+
+int		ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
 {
 	char	*str;
 	int	final_lenght;
@@ -40,7 +54,6 @@ int	ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
 	int	zero;
 
 	n = (unsigned int)(4294967295 + 1 + n);
-	final_lenght = 0;
 	zero = 0;
 	str = ft_itoa_base(n, hexa);
 	len = ft_strlen(str);
@@ -49,12 +62,9 @@ int	ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
 		zero = flags->dot - len;
 		len = flags->dot;
 	}
-	if (flags->minus == 0)
-		ft_treat_width(*flags, (len));
-	final_lenght += ft_count_putstr("0", zero);
-	final_lenght += ft_count_putstr(str, 1);
-	if (flags->minus == 1)
-		ft_treat_width(*flags, (len));
+	if (flags->dot > -1)
+		flags->zero = 0;
+	final_lenght = ft_treat_hexa_two(flags, n, len, zero);
 	if (flags->width > final_lenght)
 		return (final_lenght + (flags->width - final_lenght));
 	return (final_lenght);
