@@ -37,8 +37,6 @@ int		ft_treat_hexa_two(t_flags *flags, char *str, int len, int zero)
 	int		final_lenght;
 
 	final_lenght = 0;
-	if (n == 0 && flags->dot == 0)
-		len--;
 	if (flags->minus == 0)
 		ft_treat_width(*flags, (len));
 	final_lenght += ft_count_putstr("0", zero);
@@ -71,6 +69,8 @@ int		ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
 	}
 	if (flags->dot > -1)
 		flags->zero = 0;
+	if (n == 0 && flags->dot == 0)
+		len--;
 	final_lenght = ft_treat_hexa_two(flags, str, len, zero);
 	free(str);
 	if (flags->width > final_lenght)
