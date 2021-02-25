@@ -32,13 +32,14 @@ char	*ft_itoa_base(unsigned long long n, char *base)
 	return (str);
 }
 
-int	ft_treat_hexa(t_flags *flags, int n, char *hexa)
+int	ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
 {
 	char	*str;
 	int	final_lenght;
 	int	len;
 	int	zero;
 
+	n = (unsigned int)(4294967295 + 1 + n);
 	final_lenght = 0;
 	zero = 0;
 	str = ft_itoa_base(n, hexa);
