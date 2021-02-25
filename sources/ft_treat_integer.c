@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:17:15 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/25 21:15:35 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:17:26 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int		ft_treat_integer_two(t_flags *flags, int n, int zero, int len)
 		ft_treat_width(*flags, len);
 	if (flags->nbnegat == 1 && flags->zero == 0 && n != -2147483648)
 		ft_putchar('-');
-	else if (n == -2147483648 && flags->width != 0)
+	else if (n == -2147483648 && flags->width == 0)
 		len--;
 	ft_count_putstr("0", zero);
 	if (n != 0 || flags->dot != 0)
