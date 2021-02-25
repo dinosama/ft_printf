@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_treat_uinteger_two(t_flags *flags, unsigned int n, int len)
+int	ft_treat_uinteger_two(t_flags *flags, unsigned int n, int len, int zero)
 {
 	if (n == 0 && flags->dot == 0)
 		len--;
@@ -41,7 +41,7 @@ int	ft_treat_uinteger(t_flags *flags, unsigned int n)
 		zero = flags->dot - len;
 		len = flags->dot;
 	}
-	len = ft_treat_uinteger_two(flags, n, len);
+	len = ft_treat_uinteger_two(flags, n, len, zero);
 	if (n == 0 && flags->dot == 0 && flags->width < 1)
 		return (0);
 	if (flags->width > len)
