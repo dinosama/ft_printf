@@ -60,5 +60,6 @@ void			ft_flags_zero(t_flags *flags);
 int			ft_treat_uinteger_two(t_flags *flags, unsigned int n, int len, int zero);
 int			ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat);
 int			ft_treat_hexa_two(t_flags *flags, char *str, int len, int zero);
+int			ft_treat_pointeur_two(t_flags *flags, char *str, int zero, int len);
 
 #endif
