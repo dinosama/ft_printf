@@ -45,7 +45,7 @@ int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
 		zero = flags->dot - len;
 		len = flags->dot;
 	}
-	final_lenght =
+	final_lenght = ft_treat_pointeur_two(flags, str, zero, len);
 	if (flags->width > final_lenght)
 		return (final_lenght + (flags->width - final_lenght));
 	return (final_lenght);
