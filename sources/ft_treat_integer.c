@@ -14,7 +14,7 @@
 
 void	ft_putlongnbr(long long nb)
 {
-	if (nb < 0)
+	if (nb < 0 && nb != -2147483648)
 	{
 		nb = -nb;
 		ft_putchar('-');
