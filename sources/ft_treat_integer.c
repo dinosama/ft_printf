@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:17:15 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/25 21:19:03 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:24:33 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ int		ft_treat_integer_two(t_flags *flags, int n, int zero, int len)
 	{
 		if (n != -2147483648)
 			ft_putchar('-');
-		else
-			len--;
+		len--;
 	}
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
