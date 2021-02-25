@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:17:15 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/25 21:36:41 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:38:41 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int		ft_treat_integer(t_flags *flags, int n)
 		len--;
 	len = ft_treat_integer_two(flags, n, zero, len);
 	if (n == -2147483648 && flags->zero == 1)
-		len--;
+		len++;
 	if (flags->width > len)
 		return (len + (flags->width - len));
 	return (len);
