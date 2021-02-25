@@ -37,6 +37,8 @@ int		ft_treat_hexa_two(t_flags *flags, char *str, int len, int zero)
 	int		final_lenght;
 
 	final_lenght = 0;
+	if (n == 0 && flags->dot == 0)
+		len--;
 	if (flags->minus == 0)
 		ft_treat_width(*flags, (len));
 	final_lenght += ft_count_putstr("0", zero);
