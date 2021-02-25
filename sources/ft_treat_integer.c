@@ -40,11 +40,15 @@ int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 	{
 		if (n != -2147483648)
 			ft_putchar('-');
+		else
+			len--;
 	}
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
 	if (negat == 1 && flags->zero == 0 && n != -2147483648)
 		ft_putchar('-');
+	else if (n == -2147483648)
+		len--;
 	ft_count_putstr("0", zero);
 	if (n != 0 || flags->dot != 0)
 		ft_putlongnbr((long long)n);
