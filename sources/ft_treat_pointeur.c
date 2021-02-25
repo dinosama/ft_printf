@@ -31,7 +31,8 @@ int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
 	if (flags->minus == 0)
 		ft_treat_width(*flags, (2 + len));
 	final_lenght += ft_count_putstr("0x", 1);
-	final_lenght += ft_count_putstr("0", zero);
+	if (p != 0)
+		final_lenght += ft_count_putstr("0", zero);
 	final_lenght += ft_count_putstr(str, 1);
 	if (flags->minus == 1)
 		ft_treat_width(*flags, (2 + len));
