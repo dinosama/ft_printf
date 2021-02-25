@@ -32,7 +32,7 @@ int	ft_flags_point(const char *save, t_flags *flags, int i, va_list *my_list)
 	{
 		flags->starpoint = 1;
 		flags->dot = va_arg(*my_list, int);
-		return (i - 1);
+		return (i);
 	}
 	flags->dot = 0;
 	while (ft_isdigit(save[i]))
