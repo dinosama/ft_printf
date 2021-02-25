@@ -39,7 +39,7 @@ int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
 	str = ft_itoa_base(p, "0123456789abcdef");
 	len = ft_strlen(str);
 	if (p == 0 && flags->dot == 0)
-		len = 2;
+		len = 0;
 	if (flags->dot > len && flags->dot >= 0)
 	{
 		zero = flags->dot - len;
