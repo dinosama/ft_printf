@@ -30,7 +30,9 @@ int	ft_flags_point(const char *save, t_flags *flags, int i, va_list *my_list)
 	i++;
 	if (save[i] == '*')
 	{
+		flags->starpoint = 1;
 		flags->dot = va_arg(*my_list, int);
+		ft_putnbr(flags->dot);
 		return (i - 1);
 	}
 	flags->dot = 0;
@@ -68,7 +70,7 @@ int	ft_recup_flags(const char *save, t_flags *flags, int i, va_list *my_list)
 			i = (i - 1) + ft_flags_digit(&save[i], flags);
 		else if (save[i] == '.')
 			i = ft_flags_point(save, flags, i, my_list);
-		else if (save[i] == '*' && flags->width == -1)
+		else if (save[i] == '*' && flags->width == -1 && flags->starpoint == 0)
 			ft_flags_star(my_list, flags);
 		else if (ft_check_valid_caract(save[i]) && stock != i)
 		{

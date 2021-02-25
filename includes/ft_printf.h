@@ -27,6 +27,7 @@ typedef	struct		s_flags
 	int				zero;
 	int				dot;
 	int				star;
+	int				starpoint;
 }			t_flags;
 
 int			ft_count_putstr(char *str, int n);
