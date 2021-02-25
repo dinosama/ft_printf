@@ -49,6 +49,7 @@ void	ft_flags_star(va_list *my_list, t_flags *flags)
 	flags->width = va_arg(*my_list, int);
 	if (flags->width < 0)
 	{
+		flags->zero = 0;
 		flags->minus = 1;
 		flags->width = flags->width * (-1);
 	}
