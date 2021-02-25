@@ -32,6 +32,8 @@ void	ft_putlongnbr(long long nb)
 
 int	ft_treat_integer_two(t_flags *flags, int n, int zero, int len, int negat)
 {
+	if (n == 0 && flags->dot == 0)
+		len--;
 	if (negat == 1)
 		len++;
 	if (negat == 1 && flags->zero == 1 && flags->dot == -1 && flags->minus == 0)
