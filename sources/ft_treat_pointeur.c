@@ -12,6 +12,22 @@
 
 #include "../includes/ft_printf.h"
 
+int	ft_treat_pointeur_two(t_flags *flags, char *str, int zero, int len)
+{
+	int		final_lenght;
+
+	final_lenght = 0;
+	if (flags->minus == 0)
+		ft_treat_width(*flags, (2 + len));
+	final_lenght += ft_count_putstr("0x", 1);
+	final_lenght += ft_count_putstr("0", zero);
+	if (str[0] != '0' || flags->dot != 0)
+		final_lenght += ft_count_putstr(str, 1);
+	if (flags->minus == 1)
+		ft_treat_width(*flags, (2 + len));
+	return (final_lenght);
+}
+
 int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
 {
 	char	*str;
@@ -19,23 +35,17 @@ int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
 	int	len;
 	int	zero;
 
-	final_lenght = 0;
 	zero = 0;
 	str = ft_itoa_base(p, "0123456789abcdef");
 	len = ft_strlen(str);
+	if (p == 0 && flags->dot == 0)
+		len = 2;
 	if (flags->dot > len && flags->dot >= 0)
 	{
 		zero = flags->dot - len;
 		len = flags->dot;
 	}
-	if (flags->minus == 0)
-		ft_treat_width(*flags, (2 + len));
-	final_lenght += ft_count_putstr("0x", 1);
-	final_lenght += ft_count_putstr("0", zero);
-		if (p != 0 || flags->dot != 0)
-	final_lenght += ft_count_putstr(str, 1);
-	if (flags->minus == 1)
-		ft_treat_width(*flags, (2 + len));
+	final_lenght =
 	if (flags->width > final_lenght)
 		return (final_lenght + (flags->width - final_lenght));
 	return (final_lenght);
