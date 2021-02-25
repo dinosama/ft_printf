@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:10:45 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/12 10:10:45 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:37:03 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ int				ft_treat_integer_two(t_flags *flags, int n, int zero, int len);
 int				ft_treat_hexa_two(t_flags *flags, char *str, int len, int zero);
 int				ft_treat_pointeur_two(t_flags *flags, char *str,
 				int zero, int len);
+void			ft_treat_integer_three(t_flags *flags);
 
 #endif

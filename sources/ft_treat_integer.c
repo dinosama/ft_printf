@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:17:15 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/25 21:24:33 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:36:41 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ void	ft_putlongnbr(long long nb)
 	}
 }
 
+void	ft_treat_integer_three(t_flags *flags)
+{
+	if (flags->dot > -1)
+		flags->zero = 0;
+}
+
 int		ft_treat_integer_two(t_flags *flags, int n, int zero, int len)
 {
 	if (flags->nbnegat == 1)
@@ -39,7 +45,8 @@ int		ft_treat_integer_two(t_flags *flags, int n, int zero, int len)
 	{
 		if (n != -2147483648)
 			ft_putchar('-');
-		len--;
+		else
+			len--;
 	}
 	if (flags->minus == 0)
 		ft_treat_width(*flags, len);
@@ -70,8 +77,7 @@ int		ft_treat_integer(t_flags *flags, int n)
 		flags->nbnegat = 1;
 	}
 	len += countnumbers(n, 10);
-	if (flags->dot > -1)
-		flags->zero = 0;
+	ft_treat_integer_three(flags);
 	if (flags->dot > len)
 	{
 		zero = flags->dot - len;
@@ -80,6 +86,8 @@ int		ft_treat_integer(t_flags *flags, int n)
 	if (n == 0 && flags->dot == 0)
 		len--;
 	len = ft_treat_integer_two(flags, n, zero, len);
+	if (n == -2147483648 && flags->zero == 1)
+		len--;
 	if (flags->width > len)
 		return (len + (flags->width - len));
 	return (len);
