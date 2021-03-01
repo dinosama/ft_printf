@@ -6,20 +6,20 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:31:53 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/12 11:31:53 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/01 06:27:15 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_itoa_base(unsigned long long n, char *base)
+char	*ft_itoa_base(uintmax_t n, char *base)
 {
 	char	*str;
 	int		size;
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	size = countnumbers((unsigned long long)n, 16);
+	size = countnumbers(n, 16);
 	if (!(str = malloc(sizeof(char) * (size + 1))))
 		return (0);
 	str[size] = '\0';
