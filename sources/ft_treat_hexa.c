@@ -6,17 +6,22 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:31:53 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/01 06:27:15 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/01 06:58:50 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_itoa_base(uintmax_t n, char *base)
+char	*ft_itoa_base(long long n, char *base)
 {
 	char	*str;
 	int		size;
 
+	if (n == -9223372036854775807 - 1)
+		{
+			str = ft_strdup("8000000000000000");
+			return (str);
+		}
 	if (n == 0)
 		return (ft_strdup("0"));
 	size = countnumbers(n, 16);
