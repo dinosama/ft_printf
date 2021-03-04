@@ -17,8 +17,6 @@ char	*ft_itoa_base(uint64_t n, char *base)
 	char	*str;
 	int		size;
 
-	if (n == -9223372036854775807 - 1)
-		return (ft_strdup("8000000000000000"));
 	if (n == 0)
 		return (ft_strdup("0"));
 	size = countnumbers(n, 16);
