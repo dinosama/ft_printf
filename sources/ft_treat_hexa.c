@@ -58,7 +58,7 @@ int		ft_treat_hexa(t_flags *flags, uint64_t n, char *hexa)
 	int		len;
 	int		zero;
 
-	n = (long long int)(4294967295 + 1 + n);
+	n = (unsigned int)(4294967295 + 1 + n);
 	zero = 0;
 	str = ft_itoa_base(n, hexa);
 	len = ft_strlen(str);
