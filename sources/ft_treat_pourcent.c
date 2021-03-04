@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:32:36 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/04 20:28:37 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:35:57 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_check_valid_indicator(int c)
 	return (0);
 }
 
-int	countnumbers(__uintmax_t n, int base)
+int	countnumbers(uintmax_t n, int base)
 {
 	int	i;
 

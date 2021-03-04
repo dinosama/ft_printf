@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:10:45 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/04 20:28:53 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:35:45 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void			ft_putlongnbr(long long nb);
 void			ft_treat_width(t_flags flags, int len);
 int				ft_treat_character(t_flags flags, va_list *my_list);
 int				ft_treat_string(t_flags flags, char *str);
-int				countnumbers(__uintmax_t n, int base);
+int				countnumbers(uintmax_t n, int base);
 char			*ft_itoa_base(u_int64_t n, char *base);
 int				ft_check_valid_caract(int c);
 int				ft_check_valid_indicator(int c);
