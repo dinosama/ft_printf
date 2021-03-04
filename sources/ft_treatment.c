@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:08:04 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/02/25 19:26:55 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/04 16:17:48 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_treatment(t_flags *flags, va_list *my_list)
 	else if (flags->type == 's')
 		return (ft_treat_string(*flags, va_arg(*my_list, char *)));
 	else if (flags->type == 'p')
-		return (ft_treat_pointeur(flags, va_arg(*my_list, unsigned long long)));
+		return (ft_treat_pointeur(flags, va_arg(*my_list, uint64_t)));
 	else if (flags->type == 'd')
 		return (ft_treat_integer(flags, va_arg(*my_list, int)));
 	else if (flags->type == 'i')
@@ -42,10 +42,10 @@ int		ft_treatment(t_flags *flags, va_list *my_list)
 	else if (flags->type == 'u')
 		return (ft_treat_uinteger(flags, va_arg(*my_list, unsigned int)));
 	else if (flags->type == 'x')
-		return (ft_treat_hexa(flags, va_arg(*my_list, unsigned int),
+		return (ft_treat_hexa(flags, va_arg(*my_list, long long int),
 		"0123456789abcdef"));
 	else if (flags->type == 'X')
-		return (ft_treat_hexa(flags, va_arg(*my_list, unsigned int),
+		return (ft_treat_hexa(flags, va_arg(*my_list, long long int),
 		"0123456789ABCDEF"));
 	else if (flags->type == '%')
 		return (ft_treat_pourcent(flags));
