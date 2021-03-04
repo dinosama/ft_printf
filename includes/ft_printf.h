@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:10:45 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/01 06:45:10 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/04 16:00:34 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			ft_treat_width(t_flags flags, int len);
 int				ft_treat_character(t_flags flags, va_list *my_list);
 int				ft_treat_string(t_flags flags, char *str);
 int				countnumbers(long long n, int base);
-char			*ft_itoa_base(long long n, char *base);
+char			*ft_itoa_base(uint64_t n, char *base);
 int				ft_check_valid_caract(int c);
 int				ft_check_valid_indicator(int c);
 int				ft_isdigit(int c);
@@ -49,10 +49,10 @@ void			ft_flags_star(va_list *my_list,
 				t_flags *flags);
 int				ft_recup_flags(const char *save, t_flags *flags,
 				int i, va_list *my_list);
-int				ft_treat_pointeur(t_flags *flags, unsigned long long p);
+int				ft_treat_pointeur(t_flags *flags, uint64_t p);
 int				ft_treat_integer(t_flags *flags, int n);
 int				ft_treat_uinteger(t_flags *flags, unsigned int n);
-int				ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa);
+int				ft_treat_hexa(t_flags *flags, uint64_t n, char *hexa);
 int				ft_treat_pourcent(t_flags *flags);
 int				ft_treatment(t_flags *flags, va_list *my_list);
 t_flags			ft_init_flags(void);
