@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:30:18 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/01 06:50:31 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/04 16:10:13 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_treat_pointeur_two(t_flags *flags, char *str, int zero, int len)
 	return (final_lenght);
 }
 
-int	ft_treat_pointeur(t_flags *flags, unsigned long long p)
+int	ft_treat_pointeur(t_flags *flags, uint64_t p)
 {
 	char	*str;
 	int		final_lenght;

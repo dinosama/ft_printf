@@ -6,13 +6,13 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:31:53 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/01 07:41:45 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/04 16:10:11 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_itoa_base(__intmax_t n, char *base)
+char	*ft_itoa_base(uint64_t n, char *base)
 {
 	char	*str;
 	int		size;
@@ -53,14 +53,14 @@ int		ft_treat_hexa_two(t_flags *flags, char *str, int len, int zero)
 	return (final_lenght);
 }
 
-int		ft_treat_hexa(t_flags *flags, unsigned int n, char *hexa)
+int		ft_treat_hexa(t_flags *flags, uint64_t n, char *hexa)
 {
 	char	*str;
 	int		final_lenght;
 	int		len;
 	int		zero;
 
-	n = (unsigned int)(4294967295 + 1 + n);
+	n = (uint64_t)(4294967295 + 1 + n);
 	zero = 0;
 	str = ft_itoa_base(n, hexa);
 	len = ft_strlen(str);
