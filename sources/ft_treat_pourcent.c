@@ -6,7 +6,7 @@
 /*   By: aaapatou <aaapatou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 11:32:36 by aaapatou          #+#    #+#             */
-/*   Updated: 2021/03/06 14:24:03 by aaapatou         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:36:26 by aaapatou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	countnumbers(uintmax_t n, int base)
 	int	i;
 
 	if (n == (uintmax_t)-2147483648)
-		return (10);
+		return (11);
 	if (n == 0)
 		return (1);
 	i = 0;
